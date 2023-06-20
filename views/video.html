@@ -1,72 +1,52 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Reza Karzari</title>
-    <meta
-      name="viewport"
-      content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width"
-    />
-    <link rel="stylesheet" type="text/css" href="theme.css" /> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <div class="topnav">
-      <div class="logo">Reza Karzari</div>
-      <a class="active" href="/" target="_self"><i class="fa fa-fw fa-home"></i> Home</a>
-      <a href="/audio" target="_self">Audio</a>
-      <a href="/video" target="_self">Video</a>
-      <a href="/table" target="_self">Table</a>
-      <a href="/list" target="_self">List</a>
-      <a href="/storefront" class="split" target="_self">online shop</a>
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmandeep Singh</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="css/theme.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Harmandeep Singh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/table">Table</a>
+            <a class="nav-link" href="/list">List</a>
+            <a class="nav-link" href="/audio">Audio</a>
+            <a class="nav-link active" href="/video">Video</a>
+            <a class="nav-link" href="/storefront">Store</a>
 
-    <div style="text-align: center">
-      <h1>video section - HTML 5 video player</h1>
-      <video width="320" height="240" controls>
-        <source
-          src="https://scs.senecac.on.ca/~tanvir.alam/shared/fall-2018/web222/movie.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://scs.senecac.on.ca/~tanvir.alam/shared/fall-2018/web222/movie.ogg"
-          type="video/ogg"
-        />
-        Your browser does not support the audio element.
-      </video>
-    </div>
-    <p>
-      The HTML &lt;video&gt; element is used to show a video on a web page. The
-      controls attribute adds video controls, like play, pause, and volume. It
-      is a good idea to always include width and height attributes. If height
-      and width are not set, the page might flicker while the video loads. The
-      &lt;source&gt; element allows you to specify alternative video files which
-      the browser may choose from. The browser will use the first recognized
-      format
-    </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div>
+    <h1>Welcome to the Harman's Video Page!</h1>
+    <p>Here you will find an HTML5 video player.</p>
+  </div>
+  </header>
 
-    <footer class="footer-distributed">
-			<div class="footer-right">
+  <section>
+    <h2>Video Player</h2>
+    <video controls>
+      <source src="https://scs.senecac.on.ca/~tanvir.alam/shared/fall-2018/web222/movie.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
 
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
-
-			</div>
-			<div class="footer-left">
-
-				<p class="footer-links">
-          <a cclass="link-1" href="/" target="_self">Home</a>
-          <a href="/audio" target="_self">Audio</a>
-          <a href="/video" target="_self">Video</a>
-          <a href="/table" target="_self">Table</a>
-          <a href="/list" target="_self">List</a>
-          <a href="/storefront"target="_self">online shop</a>
-				</p>
-
-				<p>Reza Karzari - WEB322 &copy; 2022</p>
-			</div>
-
-		</footer>
-  </body>
+    <p>The video player above allows us to watch a video using HTML5 video capabilities and properties. 
+      We can control the playback, adjust the volume, and enjoy the content!</p>
+  </section>
+  <footer>
+    <h6>Made by Harman for WEB322</h6>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

@@ -1,112 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US" class="hide-scroll">
-  <head>
-    <title>Reza Karzari</title>
-    <meta
-      name="viewport"
-      content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width"
-    />
-    <link rel="stylesheet" type="text/css" href="theme.css" /> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      table,
-      th,
-      td {
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="topnav">
-      <div class="logo">Reza Karzari</div>
-      <a class="active" href="/" target="_self"><i class="fa fa-fw fa-home"></i> Home</a>
-      <a href="/audio" target="_self">Audio</a>
-      <a href="/video" target="_self">Video</a>
-      <a href="/table" target="_self">Table</a>
-      <a href="/list" target="_self">List</a>
-      <a href="/storefront" class="split" target="_self">online shop</a>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmandeep Singh</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/theme.css" rel="stylesheet">
+</head>
+
+<body id="bover">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Harmandeep Singh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link active" href="/table">Table</a>
+            <a class="nav-link" href="/list">List</a>
+            <a class="nav-link" href="/audio">Audio</a>
+            <a class="nav-link" href="/video">Video</a>
+            <a class="nav-link" href="/storefront">Store</a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <h1>Welcome to Harman's Table Page!</h1>
+      <p>Here you will find two tables displaying information about my favorite movies and Songs.</p>
     </div>
+  </header>
 
-    <h1 style="text-align: center">Welcome To This Page!</h1>
-    <h2>Table of My Favorites</h2>
-
-    <table class="table" style="width: 70%; margin: auto">
-      <caption>
-        Favorite Books and Movies
-      </caption>
+  <section>
+    <h2>Favorite Movies</h2>
+    <caption>Table 1: Favorite Movies</caption>
+    <table class="table">
       <thead>
         <tr>
-          <th colspan="3">2022</th>
+          <th>Title</th>
+          <th>Director</th>
+          <th>Release Date</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th rowspan="3">Movies</th>
-          <th>Name</th>
-          <th>Puplish</th>
+          <td>Marvels Endgame</td>
+          <td>Ruso Brothers</td>
+          <td>April 26, 2019</td>
         </tr>
         <tr>
-          <td>Black List</td>
-          <td>2009</td>
+          <td>Transformers - The last knight</td>
+          <td>Michael Bay</td>
+          <td>June 21, 2017</td>
         </tr>
         <tr>
-          <td>Memory</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <th rowspan="3">Books</th>
-          <th>Name</th>
-          <th>Puplish</th>
-        </tr>
-        <tr>
-          <td>harry potter</td>
-          <td>1997</td>
-        </tr>
-        <tr>
-          <td>Becoming</td>
-          <td>2021</td>
+          <td>Punjab 1984</td>
+          <td>Anurag Singh</td>
+          <td>June 27, 2014</td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-          <th colspan="2">Best in Books</th>
-          <td>Becoming</td>
-        </tr>
-      </tfoot>
     </table>
-    <p>
-      In this page I used HTML tables allow web developers to arrange data into
-      rows and columns. A table in HTML consists of table cells inside rows and
-      columns. Each table cell is defined by a &lt;td&gt;and a &lt;/td&gt; tag.
-      A table cell can contain all sorts of HTML elements: text, images, lists,
-      links, other tables, etc. HTML tables can have cells that span over
-      multiple rows and/or columns.
-    </p>
 
-    <footer class="footer-distributed">
-			<div class="footer-right">
+    <h2>Favorite Songs</h2>
+    <caption>Table 2: Favorite Songs</caption>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Release Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Last Ride</td>
+          <td>Sidhu Mossewala</td>
+          <td>May 15, 2022</td>
+        </tr>
+        <tr>
+          <td>Gal Kudey</td>
+          <td>Bhalwan</td>
+          <td>16 Nov, 2020</td>
+        </tr>
+        <tr>
+          <td>Classy Enemy</td>
+          <td>Simran Kaur Dhadli</td>
+          <td>8 May, 2023</td>
+        </tr>
+      </tbody>
+    </table>
 
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
+    <p>The above tables showcase my favorite movies and songs.
+      Table 1 displays the titles, director, and release date of my
+      favorite movies, while Table 2 showcases the song name, artist, and release date of my favorite songs.</p>
+  </section>
+  <footer>
+    <h6>Made by Harman for WEB322</h6>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-			</div>
-			<div class="footer-left">
-
-				<p class="footer-links">
-          <a cclass="link-1" href="/" target="_self">Home</a>
-          <a href="/audio" target="_self">Audio</a>
-          <a href="/video" target="_self">Video</a>
-          <a href="/table" target="_self">Table</a>
-          <a href="/list" target="_self">List</a>
-          <a href="/storefront"target="_self">online shop</a>
-				</p>
-
-				<p>Reza Karzari - WEB322 &copy; 2022</p>
-			</div>
-
-		</footer>
-  </body>
 </html>

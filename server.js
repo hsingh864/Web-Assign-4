@@ -1,78 +1,72 @@
 /*********************************************************************************
- * WEB322 – Assignment 3
- * I declare that this assignment is my own work in accordance with Seneca Academic Policy.
- * No part of this assignment has been copied manually or electronically from any other source
- * (including web sites) or distributed to other students.
- *
- * Name: Reza Karzari Student ID: 153845201  Date: 10/12/2022
- *
- *
- ********************************************************************************/
+* WEB322 – Assignment 03
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part 
+* of this assignment has been copied manually or electronically from any other source 
+* (including 3rd party web sites) or distributed to other students.
+* 
+* Name: _Harmandeep Singh_ Student ID: _169916210_ Date: _07-06-2023_
+*
+********************************************************************************/ 
 
-var express = require("express");
-var app = express();
-var HTTP_PORT = process.env.PORT || 8080;
-var path = require("path");
 
-const {
-  initialize,
-  getPartTimers,
-  getEmployeeByNum,
-} = require("./modules/officeData");
+const express = require("express");
+const path = require("path");
+const data = require("./modules/officeData.js");
+const parser = require("body-parser");
 
-// setup a 'route' to listen on the default url path
 
-app.use(express.static("Public"));
+const app = express();
+const HTTP_PORT = process.env.PORT || 8080;
 
-app.get("/PartTimer", (req, res) => {
-  getPartTimers()
-    .then((value) => res.send(JSON.stringify(value)))
-    .catch((error) => res.send(JSON.stringify({ message: error })));
-});
-app.get("/employee/:num", (req, res) => {
-  getEmployeeByNum(Number(req.params.num))
-    .then((value) => res.send(JSON.stringify(value)))
-    .catch((error) => res.send(JSON.stringify({ message: error })));
-});
-app.get("/PartTimer", (req, res) => {
-  getPartTimers()
-    .then((value) => res.send(JSON.stringify(value)))
-    .catch((error) => res.send(JSON.stringify({ message: error })));
+app.use(express.static("public"));
+app.use(parser.urlencoded({extended:true}));
+
+app.get("/", (req,res)=>{
+    res.sendFile(path.join(__dirname, "./views/home.html"));
 });
 
-app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "/views/home.html"));
-});
-app.get("/audio", function (req, res) {
-  res.sendFile(path.join(__dirname, "/views/audio.html"));
-});
-app.get("/video", function (req, res) {
-  res.sendFile(path.join(__dirname, "/views/video.html"));
-});
-app.get("/table", function (req, res) {
-  res.sendFile(path.join(__dirname, "/views/table.html"));
-});
-app.get("/list", function (req, res) {
-  res.sendFile(path.join(__dirname, "/views/list.html"));
-});
-app.get("/storefront", function (req, res) {
-  res.sendFile(path.join(__dirname, "/views/storefront.html"));
+app.get("/audio", (req,res)=>{
+    res.sendFile(path.join(__dirname, "./views/audio.html"));
 });
 
-app.use((req, res) => {
-  res.status(404).send("Page Not Found");
+app.get("/video", (req,res)=>{
+    res.sendFile(path.join(__dirname, "./views/video.html"));
 });
 
-app.use(express.urlencoded({ extended: true }));
+app.get("/list", (req,res)=>{
+    res.sendFile(path.join(__dirname, "./views/list.html"));
+});
 
+app.get("/table", (req,res)=>{
+    res.sendFile(path.join(__dirname, "./views/table.html"));
+});
 
-// setup http server to listen on HTTP_PORT
-
-
-initialize()
-  .then(() => {
-    app.listen(HTTP_PORT, () => {
-      console.log("server listening on port: " + HTTP_PORT);
+app.get("/PartTimer", (req,res)=>{
+    data.getPartTimers().then((data)=>{
+        res.json(data);
     });
-  })
-  .catch((error) => console.log(error));
+});
+
+app.get("/employee/:employeeNum", (req,res)=>{
+    data.getEmployeeByNum(req.params.employeeNum).then((data)=>{
+        res.json(data);
+    }).catch((err)=>{
+        res.json({message:"no result"})
+    });
+});
+app.get("/storefront", (req,res)=>{
+    res.sendFile(path.join(__dirname, "./views/storefront.html"));
+}   
+);
+
+app.use((req,res)=>{
+    res.status(404).send("Page Not Found");
+})
+
+data.initialize().then(function(){
+    app.listen(HTTP_PORT, function(){
+        console.log("app listening in: " + HTTP_PORT)
+    });
+}).catch(function(err){
+    console.log("unable to start server: " + err);
+});
